@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form > fieldset > label > span {
+        color: orange;
+      }
+      form > fieldset > div > span {
+        color: white;
+      }
+
+      #title {
+        background-color: orange;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+      }
+      td,
+      th {
+        text-align: left;
+        padding: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="form.html" method="GET">
+      <fieldset>
+        <div id="title"><span>So thich cua ban</span></div>
+        <table>
+          <tr>
+            <td>   
+              Ho va ten
+            </td>
+            <td>
+              <input type="Text" name="Your Name" value=" " />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Email
+            </td>
+            <td>
+              <input type="text" name="email" value=" " /><br />
+            </td>          
+          </tr>
+        </table>
+        So thich
+        <table>
+          <tr>
+            <td>
+              <label
+                ><input type="checkbox" name="hobby" /><span
+                  >The thao</span
+                ></label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="checkbox" name="hobby" /><span
+                  >Am nhac</span
+                ></label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="checkbox" name="hobby" /><span
+                  >Doc sach</span
+                ></label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label
+                ><input type="checkbox" name="hooby" /><span
+                  >Luot web</span
+                ></label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="checkbox" name="hooby" /><span
+                  >Choi game</span
+                ></label
+              >
+            </td>
+            <td>
+              <label
+                ><input type="checkbox" name="hooby" /><span
+                  >Dien anh</span
+                ></label
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label
+                ><input type="checkbox" name="hooby" /><span
+                  >Du lich</span
+                ></label
+              >
+            </td>
+            </table>
+            <input type="submit" value="Gui thong tin" />
+            <input type="reset" value="Nhap lai" />
+          </tr>
+      </fieldset>
+    </form>
+  </body>
+</html>
