@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    h1 {
+      text-align: center;
+      color: blue;
+      font-size: 50px;
+    }
+    table {
+      border-collapse: collapse;
+      margin: auto;
+    }
+    th,
+    td {
+      width: 50px;
+      height: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    /* head talbe */
+    tr:first-child th:first-child {
+      background-color: red;
+      color: white;
+    }
+    tr:first-child th:nth-child(1n + 2) {
+      background-color: orange;
+      color: white;
+    }
+    tr:first-child th:last-child {
+      background-color: blue;
+    }
+    tr:nth-child(2) th {
+      font-weight: normal;
+    }
+    tr:nth-child(2) th:first-child {
+      color: red;
+    }
+    tr:nth-child(2) th:last-child {
+      color: blue;
+    }
+    /* calender */
+    tr:nth-child(1n + 3) td {
+      border: 1px solid;
+      padding: 30px;
+    }
+    tr:nth-child(1n + 3) td:first-child span {
+      color: red;
+      font-size: 30px;
+    }
+    tr:nth-child(1n + 3) td:nth-child(1n + 2) span {
+      font-size: 30px;
+    }
+    tr:nth-child(1n + 3) td:last-child span {
+      font-size: 30px;
+      color: blue;
+    }
+  </style>
+  <body>
+    <h1>Thang 10-October</h1>
+    <table>
+      <tr>
+        <th>C.Nhat</th>
+        <th>T.Hai</th>
+        <th>T.Ba</th>
+        <th>T.Tu</th>
+        <th>T.Nam</th>
+        <th>T.Sau</th>
+        <th>T.Bay</th>
+      </tr>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><span>1</span>13</td>
+        <td><span>2</span>14</td>
+        <td><span>3</span>15</td>
+      </tr>
+      <tr>
+        <td><span>4</span>16</td>
+        <td><span>5</span>17</td>
+        <td><span>6</span>18</td>
+        <td><span>7</span>19</td>
+        <td><span>8</span>20</td>
+        <td><span>9</span>21</td>
+        <td><span>10</span>22</td>
+      </tr>
+      <tr>
+        <td><span>11</span>23</td>
+        <td><span>12</span>24</td>
+        <td><span>13</span>25</td>
+        <td><span>14</span>26</td>
+        <td><span>15</span>27</td>
+        <td><span>16</span>28</td>
+        <td><span>17</span>29</td>
+      </tr>
+      <tr>
+        <td><span>18</span>1.9</td>
+        <td><span>19</span>2</td>
+        <td><span>20</span>3</td>
+        <td><span>21</span>4</td>
+        <td><span>22</span>5</td>
+        <td><span>23</span>6</td>
+        <td><span>24</span>7</td>
+      </tr>
+    </table>
+  </body>
+</html>
