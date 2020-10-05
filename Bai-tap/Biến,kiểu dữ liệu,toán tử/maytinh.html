@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>
+        <input type="number" name="number" id="number1" />
+        <input type="number" name="number" id="number2" /> </label
+      ><br />
+      <button type="button" onclick="add()" value="Addition">
+        Addition(+)
+      </button>
+      <button type="button" onclick="sub()" value="Subtration">
+        Subtration(-)
+      </button>
+      <button type="button" onclick="multi()" value="Multiplication">
+        Multiplication(*)
+      </button>
+      <button type="button" onclick="divi()" value="Division">
+        Division(/)
+      </button>
+      <p id="result"></p>
+    </form>
+  </body>
+  <script>
+    const num1DOM = document.getElementById("number1");
+    const num2DOM = document.getElementById("number2");
+    function add() {
+      const num1 = num1DOM.value;
+      const num2 = num2DOM.value;
+      const add = num1 + num2;
+      const result = `Result add:$add`;
+    }
+    function sub() {
+      const num1 = num1DOM.value;
+      const num2 = num2DOM.value;
+      const sub = num1 - num2;
+      const result = `Result sub:$sub`;
+    }
+    function multi() {
+      const num1 = num1DOM.value;
+      const num2 = num2DOM.value;
+      const multi = num1 * num2;
+      const result = `Result multi:$multi`;
+    }
+    function divi() {
+      const num1 = num1DOM.value;
+      const num2 = num2DOM.value;
+      const divi = num1 / num2;
+      const result = `Result divi:$divi`;
+    }
+  </script>
+</html>
