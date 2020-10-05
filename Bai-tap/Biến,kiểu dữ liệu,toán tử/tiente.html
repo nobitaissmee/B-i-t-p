@@ -28,18 +28,18 @@
         </tr>
         <tr>
           <td>
-            <input type="text" id="amount" />
+            <input name="amount" type="text" id="amount" />
           </td>
           <td>
-            <select id="from">
-              <option>VND</option>
-              <option>USD</option>
+            <select name="from" id="from">
+              <option value="VND">VND</option>
+              <option value="USD">USD</option>
             </select>
           </td>
           <td>
-            <select id="to">
-              <option>VND</option>
-              <option>USD</option>
+            <select name="to" id="to">
+              <option value="VND">VND</option>
+              <option value="USD">USD</option>
             </select>
           </td>
           <td>
@@ -63,16 +63,19 @@
     const toDOM = document.getElementById("to");
     const resultDOM = document.getElementById("result");
     // body//
-    function toUSD(amount,currency)
-    return amount/rates[currency];
-    function fromUSD(amount,currency)
-    return amount*rates[currency]
-    const amount=amountDOM.value;
-    const toCurrency=toDOM.value;
-    const inUSD=toUSD(amount,fromDOM.value);
-    const result=fromUSD(inUSD,toCurrency);
-    function show(){
-      resultDOM.innerText=`Result:${result} ${toCurrency}`;
+    function toUSD(amount, currency) {
+      return amount / rates[currency];
+    }
+    function fromUSD(amount, currency) {
+      return amount * rates[currency];
+    }
+    function show() {
+      const amount = amountDOM.value;
+      const toCurrency = toDOM.value;
+      const inUSD = toUSD(amount, fromDOM.value);
+      const result = fromUSD(inUSD, toCurrency);
+
+      resultDOM.innerText = `Result:${result} ${toCurrency}`;
     }
   </script>
 </html>
