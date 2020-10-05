@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        margin: auto;
+        border-collapse: collapses;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+      th {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <th>Amount</th>
+          <th>From Currency</th>
+          <th>To Currency</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" id="amount" />
+          </td>
+          <td>
+            <select id="from">
+              <option>VND</option>
+              <option>USD</option>
+            </select>
+          </td>
+          <td>
+            <select id="to">
+              <option>VND</option>
+              <option>USD</option>
+            </select>
+          </td>
+          <td>
+            <button type="button" onclick="show()">Convert</button>
+          </td>
+        </tr>
+        <tr>
+          <td id="result"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+  <script>
+    const rates = {
+      USD: 1,
+      EURO: 0.8,
+      VND: 23000,
+    };
+    const amountDOM = document.getElementById("amount");
+    const fromDOM = document.getElementById("from");
+    const toDOM = document.getElementById("to");
+    const resultDOM = document.getElementById("result");
+    // body//
+    function toUSD(amount,currency)
+    return amount/rates[currency];
+    function fromUSD(amount,currency)
+    return amount*rates[currency]
+    const amount=amountDOM.value;
+    const toCurrency=toDOM.value;
+    const inUSD=toUSD(amount,fromDOM.value);
+    const result=fromUSD(inUSD,toCurrency);
+    function show(){
+      resultDOM.innerText=`Result:${result} ${toCurrency}`;
+    }
+  </script>
+</html>
