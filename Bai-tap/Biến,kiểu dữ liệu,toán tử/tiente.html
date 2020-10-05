@@ -34,12 +34,14 @@
             <select name="from" id="from">
               <option value="VND">VND</option>
               <option value="USD">USD</option>
+              <option value="EURO">EURO</option>
             </select>
           </td>
           <td>
             <select name="to" id="to">
               <option value="VND">VND</option>
               <option value="USD">USD</option>
+              <option value="EURO">EURO</option>
             </select>
           </td>
           <td>
@@ -74,7 +76,6 @@
       const toCurrency = toDOM.value;
       const inUSD = toUSD(amount, fromDOM.value);
       const result = fromUSD(inUSD, toCurrency);
-
       resultDOM.innerText = `Result:${result} ${toCurrency}`;
     }
   </script>
