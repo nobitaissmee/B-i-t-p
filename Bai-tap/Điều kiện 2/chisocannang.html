@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let weight = parseInt(prompt("Nhap", ""));
+    let height = parseInt(prompt("Nhap", "")) / 100;
+    const BMI = weight / (height * height);
+    if (BMI < 18) document.write("Underweight");
+    else if (BMI < 25.0) document.write("Normal");
+    else if (BMI < 30.0) document.write("Overweight");
+    else document.write("Obese");
+  </script>
+</html>

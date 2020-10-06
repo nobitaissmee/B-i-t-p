@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Do you love me?</h1>
+    <button type="button" id="yes" onclick="yesbut()">Yes</button>
+    <button
+      type="button"
+      id="no"
+      style="top: 0px; left: 0px"
+      onmouseover="nobut()"
+    >
+      No
+    </button>
+  </body>
+  <script>
+    let maxtop, maxleft;
+    function windowUpdate() {
+      maxtop = window.innerHeight - 150;
+      maxleft = window.innerWidth - 150;
+    }
+    windowUpdate();
+    function yesbut() {
+      alert("<3");
+    }
+    function nobut() {
+      document.getElementById("no").style.left =
+        Math.floor(Math.random() * maxleft) + "px";
+      document.getElementById("no").style.top =
+        Math.floor(Math.random() * maxtop) + "px";
+    }
+  </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="number" min="1" max="12" id="thang" />
+      <button type="button" onclick="show()">Tinh so ngay</button>
+    </form>
+    <p id="ketqua"></p>
+  </body>
+  <script>
+    const solieuDOM = document.getElementById("thang");
+    const ketquaDOM = document.getElementById("ketqua");
+    function show() {
+      const solieu = parseInt(solieuDOM.value);
+      switch (solieu) {
+        case 2:
+          ketquaDOM.innerText = `Thang ${solieu} co 28 hoac 20 ngay`;
+          break;
+        case 2:
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          ketquaDOM.innerText = `Thang ${solieu} co 30 ngay`;
+          break;
+        default:
+          ketquaDOM.innerText = `Thang ${solieu} co 31 ngay`;
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myimg {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="./image/Download-1525567810.jpg"
+      alt=""
+      id="myimg"
+      style="top: 0px; left: 0px"
+    />
+  </body>
+  <script>
+    //   move
+    function moveSelection(evt) {
+      switch (evt.keyCode) {
+        case 37:
+          leftArrowPressed();
+          break;
+        case 39:
+          rightArrowPressed();
+          break;
+        case 38:
+          upArrowPressed();
+          break;
+        case 40:
+          downArrowPressed();
+          break;
+      }
+    }
+    // up-down-left-right
+    function upArrowPressed() {
+      let element = document.getElementById("myimg");
+      element.style.top = parseInt(element.style.top) - 5 + "px";
+    }
+    function downArrowPressed() {
+      let element = document.getElementById("myimg");
+      element.style.top = parseInt(element.style.top) + 5 + "px";
+    }
+    function leftArrowPressed() {
+      let element = document.getElementById("myimg");
+      element.style.left = parseInt(element.style.left) - 5 + "px";
+    }
+    function rightArrowPressed() {
+      let element = document.getElementById("myimg");
+      element.style.left = parseInt(element.style.left) + 5 + "px";
+    }
+    document.addEventListener("keydown", moveSelection);
+  </script>
+</html>

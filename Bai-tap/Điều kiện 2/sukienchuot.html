@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #myImage {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <img
+        id="myImage"
+        width="100px"
+        src="./image/f100-hybrid-size-5-football-ball-orange-blue.jpg"
+      />
+      <p>Click button below to move the image to right</p>
+      <button type="button" value="Click Me" onclick="move()">Click me</button>
+    </form>
+  </body>
+  <script>
+    let ball = document.getElementById("myImage");
+    ball.style.left = "0px";
+    function move() {
+      ball.style.left = parseInt(ball.style.left) + 10 + "px";
+    }
+  </script>
+</html>
