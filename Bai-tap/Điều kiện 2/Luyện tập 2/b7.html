@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let a = Number(prompt("Nhap a:"));
+    let b = Number(prompt("Nhap b"));
+    let c = Number(prompt("Nhap c"));
+    let dt = b * b - 4 * a * c;
+    if (a === 0) {
+      document.write("Nghiem phuong trinh:", -c / b);
+    } else if (dt < 0) {
+      document.write("Vo nghiem");
+    } else if ((dt = 0)) {
+      document.write("Co nghiem kep", -b / (2 * a));
+    } else {
+      document.write("Nghiem 1", (-b + Math.sqrt(dt)) / (2 * a));
+      document.write("Nghiem 2", (-b - Math.sqrt(dt)) / (2 * a));
+    }
+  </script>
+</html>

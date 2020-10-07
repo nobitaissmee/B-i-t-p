@@ -29,29 +29,30 @@
   <script>
     const num1DOM = document.getElementById("number1");
     const num2DOM = document.getElementById("number2");
+    const resultDOM = document.getElementById("result");
     function add() {
       const num1 = num1DOM.value;
       const num2 = num2DOM.value;
       const add = num1 + num2;
-      const result = `Result add:$add`;
+      resultDOM.innerText = `Result add:${add}`;
     }
     function sub() {
       const num1 = num1DOM.value;
       const num2 = num2DOM.value;
       const sub = num1 - num2;
-      const result = `Result sub:$sub`;
+      resultDOM.innerText = `Result sub:${sub}`;
     }
     function multi() {
       const num1 = num1DOM.value;
       const num2 = num2DOM.value;
       const multi = num1 * num2;
-      const result = `Result multi:$multi`;
+      resultDOM.innerText = `Result multi:${multi}`;
     }
     function divi() {
       const num1 = num1DOM.value;
       const num2 = num2DOM.value;
       const divi = num1 / num2;
-      const result = `Result divi:$divi`;
+      resultDOM.innerText = `Result divi:${divi}`;
     }
   </script>
 </html>
