@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let max = Number(prompt("Nhap:"));
+    let fib = [];
+    let tc;
+    fib[0] = 1;
+    fib[1] = 1;
+    document.write("1<br>1<br>");
+    for (i = 2; i < max; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
+      document.write(fib[i] + "<br>");
+    }
+    tc = fib[0] + fib[1];
+    for (j = 2; j <= max - 1; j++) {
+      tc = tc + fib[j];
+    }
+    document.write("Tong:", tc);
+  </script>
+</html>

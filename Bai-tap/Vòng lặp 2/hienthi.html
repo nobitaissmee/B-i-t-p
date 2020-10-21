@@ -9,18 +9,18 @@
   <script>
     let number = parseInt(prompt("Soluong:"));
     let count = 0;
-    let flag = true;
     for (n = 2; count < number; n++) {
-      if (n % 2 === 0) {
-        n++;
-      } else {
-        for (let i = 3; i < Math.sqrt(n); i += 2) {
-          if (n % i === 0) {
-            break;
-          }
+      let flag = true;
+      for (let i = 2; i <= Math.sqrt(n); i += 2) {
+        if (n % i === 0) {
+          flag = false;
+          break;
         }
       }
+      if (flag === true) {
+        count += 1;
+        document.write(n + "<br>");
+      }
     }
-    count += 1;
   </script>
 </html>

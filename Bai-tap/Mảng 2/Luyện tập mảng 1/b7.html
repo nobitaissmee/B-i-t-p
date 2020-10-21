@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let a=[]
+    for (let i=0;i<10;i++){
+        let b=parseInt(prompt())
+        a.push(b)
+    }
+    let sn=parseInt(prompt('Nhap',))
+    for (let j=0;j<a.length;j++){
+        if(sn===a[j]){
+            for (let z=a[j];z<a.length;z++){
+                a[j]=a[j+=1]     
+            }
+        }
+    }
+    a[a.length-1]=0
+    document.write(a)
+</script>
+</html>

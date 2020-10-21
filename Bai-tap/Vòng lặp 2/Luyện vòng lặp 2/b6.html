@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const star = "*";
+    const space = "&nbsp;";
+    for (i = 0; i < 7; i++) {
+      document.write(i === 1 || i == 2 || i === 4 || i === 5 ? star : space);
+    }
+    document.write("<br>");
+    for (i = 0; i < 7; i++) {
+      document.write(i === 0 || i === 6 || i === 3 ? star : space);
+    }
+    document.write("<br>");
+    for (i = 0; i < 7; i++) {
+      document.write(i === 0 || i === 6 ? star : space);
+    }
+    document.write("<br>");
+    for (i = 0; i < 7; i++) {
+      document.write(i === 1 || i === 5 ? star : space);
+    }
+    document.write("<br>");
+    for (i = 0; i < 7; i++) {
+      document.write(i === 2 || i === 4 ? star : space);
+    }
+    document.write("<br>");
+    for (i = 0; i < 7; i++) {
+      document.write(i === 3 ? star : space);
+    }
+    document.write("<br>");
+  </script>
+</html>

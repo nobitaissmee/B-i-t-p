@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function check(a, count) {
+      for (i = 0; i < arr.length; i++) {
+        if (a === arr[i]) {
+          count++;
+        }
+      }
+      if (count === 0) {
+        count = -1;
+      }
+      return count;
+    }
+    let arr = ["v", "v", "c", "b", "c"];
+    let b = prompt();
+    let count = 0;
+    check(b);
+    console.log(check(b, count));
+  </script>
+</html>

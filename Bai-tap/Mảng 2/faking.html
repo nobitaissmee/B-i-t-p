@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text {
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Type anthing slowly</h2>
+    <form name="f">
+      <textarea
+        class="text"
+        name="text"
+        rows="10"
+        cols="30"
+        onkeydown="onKeyFunction()"
+      >
+      </textarea>
+    </form>
+  </body>
+  <script>
+    let a = "SOMETHING";
+    let n = "";
+    function onKeyFunction() {
+      t = document.f.text.value;
+      j = t.length;
+      if (j > 0) {
+        for (let i = 0; i < j; i++) {
+          n = n + a[i];
+          if (i === 9) {
+            document.f.text.value = "";
+            n = "";
+          }
+        }
+      }
+      document.f.text.value = n;
+      n = "";
+      setTimeout("onKeyFunction()", 1);
+    }
+  </script>
+</html>

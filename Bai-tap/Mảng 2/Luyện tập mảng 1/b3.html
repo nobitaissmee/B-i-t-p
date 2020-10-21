@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id=s></p>
+    <p id=d></p>
+</body>
+<script>
+    let a=[1,2,13,213,12421,21321,21,3,4]
+    let max=a[0]
+    let tc=0;
+    for (let i=1;i<= a.length;i++){
+        if (a[i]>max){
+            max=a[i];
+        }
+    }
+    document.getElementById('s').innerText=max
+    for (let j=0;j < a.length;j++){
+        tc=tc+a[j]
+    }
+    tb=tc/a.length;
+    document.getElementById('d').innerText=tb
+
+</script>
+</html>

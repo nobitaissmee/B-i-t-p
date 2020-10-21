@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" onclick="play()">Choi</button>
+    <button type="reset">Choi lai</button>
+  </body>
+  <script>
+    function play() {
+      let ghd = parseInt(prompt("Nhap:"));
+      let ghs = parseInt(prompt("Nhap:"));
+      let nn = Math.floor(Math.random() * (ghs - ghd) + ghd);
+      let sn = parseInt(prompt("Du doan:"));
+      for (let i = 1; i <= 3; i++) {
+        if (sn === nn) {
+          alert("Chuc mung");
+          break;
+        } else if (sn > nn) {
+          let sn = parseInt(prompt("Nhap lai"));
+        } else if (sn < nn) {
+          let sn = parseInt(prompt("Nhap lai:"));
+        }
+      }
+    }
+  </script>
+</html>
