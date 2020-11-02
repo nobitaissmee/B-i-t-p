@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Phone {
+      constructor(name) {
+        this.name = name;
+        this.batery = 100;
+        this.isOn = true;
+        this.writting = null;
+        this.sentBox = {};
+        this.reviBox = {};
+      }
+      show(message) {
+        console.log(`[${this.name} ${message}]`);
+      }
+      isEnoughBatery() {
+        if (this.batery <= 0) {
+          this.show("Low!Pls charging");
+          this.poweroff();
+          return false;
+        }
+        return true;
+      }
+      charging() {
+        this.batery = 100;
+        this.show(`Full:${this.batery}`);
+      }
+      useBatery(using) {
+        if (this.isOff()) return false;
+        using();
+        this.batery -= 1;
+        this.isEnoughBatery();
+        return true;
+      }
+      isOff() {
+        if (!this.isOn) {
+          this.show("Turn your phone");
+        }
+        return !this.isOn;
+      }
+      checkPower() {
+        console.log(
+          `${this.name} is ${this.isOn ? "on" : "off"} Power:${this.batery}`
+        );
+      }
+      powerOn() {
+        this.show("turn on");
+        if (this.isEnoughBatery()) {
+          this.isOn = true;
+        }
+      }
+      powerOff() {
+        this.show("Turn off");
+        this.isOn = false;
+      }
+      writingMess(st) {
+        const first = () => {
+          this.writting = {
+            from: this.name,
+            st: st,
+          };
+          this.show("!!!");
+        };
+        return this.useBatery(first);
+      }
+      revingMess(mess) {
+        const first = () => {
+          this.show(`New mess from:${mess.from}:${mess.st}`);
+          if (this.reviBox[mess.from] !== undefined) {
+            this.reviBox[mess.from].push(mess.st);
+          } else this.reviBox[mess.from] = [mess.st];
+        };
+        return this.useBatery(first);
+      }
+      sendMess(info) {
+        const first = () => {
+          if (!info) return this.show("Fail");
+          if (info.revingMess(this.writting)) {
+            this.show("Sent");
+            if (this.sentBox[info.name] !== undefined) {
+              this.sentBox[info.name].push(this.writting.st);
+            } else {
+              this.sentBox[info.name] = [this.writting.st];
+            }
+          } else this.show("Fail.Try agian");
+        };
+        return this.useBatery(first);
+      }
+      _trave(box) {
+        let result = "";
+        Object.keys(box).forEach((key) => {
+          result += `\n-${key}\n`;
+
+          box[key].forEach((mess) => {
+            result += mess + "\n";
+          });
+        });
+        return result;
+      }
+      showRebox() {
+        const first = () => {
+          const mess = this._trave(this.reviBox);
+          this.show("Received:" + mess);
+        };
+        return this.useBatery(first);
+      }
+      showSentbox() {
+        const first = () => {
+          const mess = this._trave(this.sentBox);
+          this.show("Send:" + mess);
+        };
+        return this.useBatery(first);
+      }
+    }
+    const iphone = new Phone("iphone");
+    const nokia = new Phone("nokia");
+
+    nokia.writingMess("Something");
+    nokia.sendMess(iphone);
+
+    nokia.checkPower();
+    iphone.checkPower();
+
+    nokia.charging();
+    nokia.powerOn();
+
+    nokia.checkPower();
+
+    nokia.showSentbox();
+    iphone.showRebox();
+  </script>
+</html>

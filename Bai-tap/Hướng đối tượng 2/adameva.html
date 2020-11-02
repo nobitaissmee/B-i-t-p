@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Apple {
+      constructor(weight) {
+        this.setWeight(10);
+      }
+
+      setWeight(weight) {
+        this.weight = weight;
+      }
+
+      getWeight() {
+        return this.weight;
+      }
+
+      isEmpty() {
+        return this.weight === 0;
+      }
+
+      decrease() {
+        if (this.weight > 0) {
+          this.weight--;
+        } else console.log(`No more!`);
+      }
+    }
+
+    class Human {
+      constructor(name, gender, weight) {
+        this.setName(name);
+        this.setGender(gender);
+        this.setWeight(weight);
+      }
+
+      setName(name) {
+        this.name = name;
+      }
+
+      setGender(gender) {
+        this.gender = gender;
+      }
+
+      setWeight(weight) {
+        this.weight = weight;
+      }
+
+      getName() {
+        return this.name;
+      }
+
+      isMale() {
+        return this.gender;
+      }
+
+      getWeight() {
+        return this.weight;
+      }
+
+      say(str) {
+        console.log(str);
+      }
+
+      checkApple(apple) {
+        return !apple.isEmpty();
+      }
+
+      eat(apple) {
+        if (this.checkApple(apple)) {
+          apple.decrease();
+          this.weight++;
+          this.say(`Ok!`);
+        } else this.say(`Over!`);
+      }
+    }
+
+    const adam = new Human("adam", true, 80);
+    const eva = new Human("eva", false, 70);
+    const apple = new Apple();
+
+    function lowWeight() {
+      console.log(
+        `Adam:${adam.getWeight()} Eva:${eva.getWeight()} Apple:${apple.getWeight()}`
+      );
+    }
+
+    lowWeight();
+
+    for (let i = 0; i < 11; i++) {
+      if (i % 2 === 0) {
+        adam.eat(apple);
+      } else eva.eat(apple);
+    }
+
+    lowWeight();
+  </script>
+</html>

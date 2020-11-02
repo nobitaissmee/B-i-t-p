@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Temperature {
+      constructor(cel, fah, kel) {
+        this.setTemperature(cel, fah, kel);
+      }
+      getCel() {
+        return this.cel;
+      }
+      getFah() {
+        return this.fah;
+      }
+      getKel() {
+        return this.kel;
+      }
+      setCel(cel) {
+        this.cel = cel;
+      }
+      setFah(fah) {
+        this.fah = fah;
+      }
+      setKel(kel) {
+        this.kel = kel;
+      }
+      setTemperature(cel, fah, kel) {
+        this.setCel(cel);
+        this.setFah(fah);
+        this.setKel(kel);
+      }
+      toString() {
+        return `Do F:${this.getFah()} </br> Do K:${this.getKel()}`;
+      }
+    }
+    let c = Number(prompt());
+    if (c >= -273) {
+      let f = (9 * c) / 5 + 32;
+      let k = c + 273.15;
+      let temperature = new Temperature(c, f, k);
+      document.write(temperature.toString());
+    } else alert("Loi");
+  </script>
+</html>

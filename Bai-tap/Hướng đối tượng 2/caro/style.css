@@ -1,0 +1,57 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+#restart {
+  margin-bottom: 10px;
+}
+
+#board {
+  width: 500px;
+}
+
+.row {
+  display: flex;
+  overflow: hidden;
+}
+
+.row .cell {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.row .cell.node::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 4px solid red;
+  z-index: 2;
+}
+
+.row .cell.cross::after,
+.row .cell.cross::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  width: 0px;
+  height: 17px;
+  border: 2px solid blue;
+  z-index: 2;
+}
+
+.row .cell.cross::after {
+  transform: rotate(45deg);
+}
+
+.row .cell.cross::before {
+  transform: rotate(-45deg);
+}

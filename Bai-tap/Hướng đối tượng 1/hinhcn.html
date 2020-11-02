@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1200px"
+      height="660px"
+      style="border: 1px solid #d3d3d3"
+    ></canvas>
+  </body>
+  <script>
+    class Rectangle {
+      constructor(cd, cr, dt, cv) {
+        this.setRectangle(cd, cr, dt, cv);
+      }
+      getCd() {
+        return this.cd;
+      }
+      getCr() {
+        return this.cr;
+      }
+      getDt() {
+        return this.dt;
+      }
+      getCv() {
+        return this.cv;
+      }
+      setCd(cd) {
+        this.cd = cd;
+      }
+      setCr(cr) {
+        this.cr = cr;
+      }
+      setDt(dt) {
+        this.dt = dt;
+      }
+      setCv(cv) {
+        this.cv = cv;
+      }
+      setRectangle(cd, cr, dt, cv) {
+        this.setCd(cd);
+        this.setCr(cr);
+        this.setDt(dt);
+        this.setCv(cv);
+      }
+      toString() {
+        return `DT:${this.getDt()} </br> CV:${this.getCv()}`;
+      }
+      draw(ctx) {
+        ctx.strokeRect(10, 10, this.cd, this.cr);
+      }
+    }
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let d = parseInt(prompt());
+    let r = parseInt(prompt());
+    let a = d * r;
+    let b = (d + r) * 2;
+    let rectangle = new Rectangle(d, r, a, b);
+    rectangle.draw(ctx);
+    document.write(rectangle.toString());
+  </script>
+</html>

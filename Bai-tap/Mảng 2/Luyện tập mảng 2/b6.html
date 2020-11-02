@@ -7,10 +7,16 @@
   </head>
   <body></body>
   <script>
-    let a = prompt();
-    let b = prompt();
-    if (a === b) {
-      document.write("Giong nhau");
-    } else document.write("Ko giong nhau");
+    let a = [];
+    for (let i = 0; i < 5; i++) {
+      let b = prompt();
+      a.push(b);
+    }
+    for (let j = 0; j < a.length; j++) {
+      if (a[j] === "-") {
+        a[j] = "_";
+      }
+    }
+    console.log(a);
   </script>
 </html>

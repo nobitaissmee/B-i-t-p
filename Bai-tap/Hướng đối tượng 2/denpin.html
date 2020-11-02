@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Battery {
+      constructor(energy) {
+        this.setEnergy(energy);
+      }
+
+      setEnergy(energy) {
+        this.energy = energy;
+      }
+
+      getEnergy() {
+        return this.energy;
+      }
+
+      decreaseEnergy() {
+        if (this.energy > 0) {
+          this.energy--;
+        } else console.log(`No more!`);
+      }
+    }
+
+    class FlashLamp {
+      constructor(status, battery) {
+        this.status = status;
+        this.setBattery(battery);
+      }
+
+      setBattery(battery) {
+        this.battery = battery;
+      }
+
+      getBatteryInfo() {
+        return this.battery.getEnergy();
+      }
+
+      turnOn() {
+        this.status = true;
+      }
+
+      turnOff() {
+        this.status = false;
+      }
+
+      light() {
+        if (this.status) {
+          console.log(`Light!`);
+          this.battery.decreaseEnergy();
+        } else console.log(`Not light!`);
+      }
+    }
+
+    let battery = new Battery();
+    battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+
+    console.log(`Battery info: ${flashLamp.getBatteryInfo()}`);
+    flashLamp.light();
+
+    console.log(`Turn on`);
+    flashLamp.turnOn();
+    flashLamp.light();
+    console.log(`Battery info: ${flashLamp.getBatteryInfo()}`);
+
+    console.log(`Turn off`);
+    flashLamp.turnOff();
+    flashLamp.light();
+  </script>
+</html>

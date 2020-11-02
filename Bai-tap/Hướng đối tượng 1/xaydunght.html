@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Circle {
+      constructor(radius, area) {
+        this.setCircle(radius, area);
+      }
+      getRadius() {
+        return this.radius;
+      }
+      getArea() {
+        return this.area;
+      }
+      setRadius(radius) {
+        this.radius = radius;
+      }
+      setArea(area) {
+        this.area = area;
+      }
+      setCircle(radius, area) {
+        this.setRadius(radius);
+        this.setArea(area);
+      }
+      toString() {
+        return `radius:${this.getRadius()} area:${this.getArea()}`;
+      }
+    }
+    let bk = Number(prompt());
+    let dt = Math.PI * bk * bk;
+    let circle = new Circle(bk, dt);
+    alert(circle.toString());
+  </script>
+</html>

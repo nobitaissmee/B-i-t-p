@@ -4,6 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        font-family: monospace;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h3>Caro Game Simple</h3>
+    <p id="carogame">
+      <input type="button" value="Change Value" onclick="changeValue()" />
+    </p>
+  </body>
+  <script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    let turn = 1;
+
+    function render() {
+      data = "";
+      for (let i = 0; i < 3; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 3; j++) {
+          data += board[i][j] + "&nbsp;&nbsp;";
+        }
+      }
+
+      data +=
+        "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+      b.innerHTML = data;
+    }
+    function check3Cells(n1, n2, n3) {
+      return n1 !== "." && n1 === n2 && n1 === n3;
+    }
+
+    function check() {
+      for (let i = 0; i < 3; i++) {
+        if (check3Cells(board[i][0], board[i][1], board[i][2])) {
+          alert("Gameover");
+          break;
+        }
+        if (check3Cells(board[0][i], board[1][i], board[2][i])) {
+          alert("Gameover");
+          break;
+        }
+        if (check3Cells(board[0][0], board[1][1], board[2][2])) {
+          alert("Gameover");
+          break;
+        }
+        if (check3Cells(board[2][0], board[1][1], board[0][2])) {
+          alert("Gameover");
+          break;
+        }
+      }
+      return false;
+    }
+
+    // init board[][]
+    for (let i = 0; i < 3; i++) {
+      board[i] = new Array(".", ".", ".");
+    }
+
+    render();
+
+    function create(name) {
+      let x = prompt("X");
+      let y = prompt("Y");
+
+      board[x][y] = name;
+
+      render();
+    }
+
+    function changeValue() {
+      create(turn % 2 === 0 ? "O" : "X");
+      turn++;
+      check();
+    }
+  </script>
 </html>
