@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Remote {
+      constructor(tivi) {
+        this.tivi = tivi;
+      }
+
+      turnOn() {
+        this.tivi.turnOnTv();
+        console.log(`Tivi On!`);
+      }
+
+      turnOff() {
+        this.tivi.turnOffTv();
+        console.log(`Tivi Off!`);
+      }
+
+      changeTVVolume(amount) {
+        this.tivi.changeVolume(amount);
+      }
+
+      changeTVChanel(chanel) {
+        this.tivi.setChanel(chanel);
+      }
+    }
+
+    class Tivi {
+      constructor() {
+        this.status;
+        this.setChanel(1);
+        this.volume = 50;
+      }
+
+      setChanel(chanel) {
+        this.chanel = chanel;
+      }
+
+      changeVolume(num) {
+        this.volume += num;
+      }
+
+      turnOnTv() {
+        this.status = true;
+      }
+
+      turnOffTv() {
+        this.status = false;
+      }
+
+      showChanel() {
+        console.log(`Chanel:` + this.chanel);
+      }
+
+      showVolume() {
+        console.log(`Volume:` + this.volume);
+      }
+    }
+
+    const tivi = new Tivi();
+    const remote = new Remote(tivi);
+
+    remote.turnOn();
+
+    tivi.setChanel(7);
+    tivi.showChanel();
+
+    remote.changeTVChanel(3);
+    tivi.showChanel();
+
+    remote.changeTVVolume(2);
+    tivi.showVolume();
+
+    remote.turnOff();
+  </script>
+</html>
