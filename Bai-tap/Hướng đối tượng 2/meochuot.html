@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    class Rat {
+      constructor(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.status = true;
+      }
+
+      isAlive() {
+        return this.status;
+      }
+
+      isDie() {
+        return (this.status = false);
+      }
+
+      talk() {
+        console.log("chit,chit");
+      }
+    }
+
+    class Cat {
+      constructor(name, weight, speed) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+      }
+
+      talk() {
+        console.log("meo,meo");
+      }
+
+      catch(rat) {
+        if (this.speed > rat.speed) {
+          console.log("Catched");
+        } else console.log("Fail");
+      }
+
+      eat(rat) {
+        if (!rat.isAlive()) {
+          console.log("Is die");
+          return;
+        }
+        console.log("Ok");
+        this.weight += rat.weight;
+      }
+    }
+
+    let mouse = new Rat("mouse", 10, 9);
+    let cat = new Cat("cat", 20, 10);
+
+    function lowWeight() {
+      console.log(`CatWeight:${cat.weight} MouseWeight:${mouse.weight}`);
+    }
+
+    lowWeight();
+
+    mouse.isAlive();
+    mouse.talk();
+
+    cat.talk();
+    cat.catch(mouse);
+
+    cat.eat(mouse);
+
+    lowWeight();
+  </script>
+</html>

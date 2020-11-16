@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lí sản phẩm</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="all">
+      <div class="row">
+        <div class="col-3">
+          <h3>Add New Product</h3>
+          <input type="text" placeholder="Ten san pham" class="input-add" id="add" />
+          <a href="javascript:;" class="btn btn-add" onclick="addProduct()">Add</a>
+        </div>
+      </div>
+      <div class="row">
+        <h3>Display All Product</h3>
+        <div class="col-6">
+          <table>
+            <thead class="t-head">
+              <tr>
+                Product Name
+              </tr>
+              <tr></tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>

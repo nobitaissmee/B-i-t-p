@@ -7,17 +7,9 @@
   </head>
   <body></body>
   <script>
-    function add(a, b, c) {
-      if (a < b) {
-        if (a < c) {
-          return (nn = a);
-        } else return (nn = b);
-      } else return (nn = c);
-    }
     let so1 = parseInt(prompt());
     let so2 = parseInt(prompt());
     let so3 = parseInt(prompt());
-    add(so1, so2, so3);
-    document.write(nn);
+    console.log(Math.min(so1, so2, so3));
   </script>
 </html>

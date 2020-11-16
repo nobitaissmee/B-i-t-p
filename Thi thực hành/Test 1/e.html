@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function main() {
+      let size = Number(prompt("Input"));
+
+      while (size <= 0 || !Number.isInteger(size)) {
+        size = Number(prompt("Nhap lai size"));
+      }
+
+      let arr = [];
+      while (arr.length < size) {
+        arr.push(Math.floor(Math.random() * 81) + 10);
+      }
+
+      console.log(arr);
+
+      let value = Number(prompt("Input Value"));
+
+      while (value <= 0 || !Number.isInteger(value)) {
+        value = Number(prompt("Nhap lai value"));
+      }
+
+      for (let i = 0; i <= arr.length; i++) {
+        if (value === arr[i]) {
+          arr.splice(i, 1);
+        }
+      }
+      console.log(arr);
+    }
+    main();
+  </script>
+</html>

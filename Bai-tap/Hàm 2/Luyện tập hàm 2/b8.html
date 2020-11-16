@@ -12,7 +12,18 @@
       a = parseInt(prompt());
       arr1.push(a);
     }
-    arr1.reverse();
-    console.log(arr1);
+    // arr1.reverse();
+    // console.log(arr1);
+    function daonguoc(arr) {
+      let a;
+      for (let i = 0; i < arr.length; i++) {
+        a = arr[i];
+        arr[i] = arr[arr.length - 1];
+        arr[arr.length - 1] = a;
+      }
+      return arr;
+    }
+
+    daonguoc(arr1);
   </script>
 </html>
