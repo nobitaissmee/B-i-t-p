@@ -313,7 +313,7 @@ window.addEventListener("keyup", handKeyUp);
 //run GameLoop
 
 function gameLoop() {
-  ball.update();
+  // ball.update();
   barUser.update();
   barCom.update();
 
